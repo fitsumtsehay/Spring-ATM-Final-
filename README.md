@@ -4,7 +4,10 @@ Fitsum Yosief Kal Ab Zhi Cheng
 
 Work Separation
 
-Fitsum - User Table and Login Form (page) & Navbar Kal Ab Kebede - Registration form Yosief - Withdrawal form and Deposit form page Zhi - Transaction Table, Transaction history page (with search for transaction)
+Fitsum - User Table and Login Form (page) & Navbar 
+Kal Ab Kebede - Registration form 
+Yosief - Withdrawal form and Deposit form page 
+Zhi - Transaction Table, Transaction history page (with search for transaction)
 
 Three Tables for database
 
