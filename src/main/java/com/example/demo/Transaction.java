@@ -12,7 +12,6 @@ public class Transaction {
     @Column(name="amount")
     private String amount;
 
-    @Column(name="account_id")
 
 
 
