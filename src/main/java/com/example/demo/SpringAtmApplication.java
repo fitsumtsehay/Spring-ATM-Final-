@@ -17,14 +17,14 @@ public class SpringAtmApplication {
         return (String[] args) -> {
             User user = new User("bart", "bart@domain.com", "bart",
                     "Bart", "Simpson", true);
-            Role userRole = new Role("bart ", "ROLE_USER");
+            Role userRole = new Role("bart", "ROLE_USER");
 
             userRepository.save(user);
             roleRepository.save(userRole);
 
-            User admin = new User("super", "super@domain.com", " super ",
+            User admin = new User("super", "super@domain.com", "super",
                     "Super", "Man", true);
-            Role adminRole = new Role("super ", "ROLE_ADMIN");
+            Role adminRole = new Role("super", "ROLE_ADMIN");
 
             userRepository.save(admin);
             roleRepository.save(adminRole);

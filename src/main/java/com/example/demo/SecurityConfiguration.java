@@ -48,9 +48,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery("select username, password, enabled from "
                         + "user_db where username=?")
                 .authoritiesByUsernameQuery("select username, role from roles "
-                        +  "where username=?");
+                        + "where username=?");
 
     }
+
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();

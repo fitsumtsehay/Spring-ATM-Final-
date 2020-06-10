@@ -2,13 +2,15 @@ package com.example.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.lang.NonNull;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
-@Table(name="UserInfo")
+@Table(name="user_db")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -91,8 +93,8 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
-    }
+    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    this.password = passwordEncoder.encode(password);}
 
     public String getFirstName() {
         return firstName;
