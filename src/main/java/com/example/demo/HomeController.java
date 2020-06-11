@@ -54,22 +54,22 @@ public class HomeController {
         return "admin";
     }
 
+
     @GetMapping("/register")
-    public String register(Model model, Principal principal){
-        String username = principal.getName();
-        model.addAttribute("user", userRepository.findByUsername(username));
+    public String ShowRegistrationPage(Model model){
         model.addAttribute("user", new User());
         return "register";
     }
 
     @PostMapping("/register")
-    public String processRegister(@Valid @ModelAttribute("user") User user, BindingResult result, Model model, Principal principal){
+    public String  processRegisterationPage(
+            @Valid @ModelAttribute("user") User user,
+            BindingResult result, Model model){
         model.addAttribute("user", user);
-        String username = principal.getName();
-        model.addAttribute("user", userRepository.findByUsername(username));
         if(result.hasErrors()){
             return "register";
-        } else {
+        }
+        else {
             model.addAttribute("message", "User Account Created");
             user.setEnabled(true);
             Role role = new Role(user.getUsername(), "ROLE_USER");
@@ -80,7 +80,13 @@ public class HomeController {
             userRepository.save(user);
         }
         return "index";
-    }
 
+    }
+    @RequestMapping("/transaction")
+    public String transaction(Principal principal, Model model){
+        String username = principal.getName();
+        model.addAttribute("user", userRepository.findByUsername(username));
+        return "transaction";
+    }
 
 }

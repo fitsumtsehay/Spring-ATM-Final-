@@ -10,30 +10,25 @@ import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
-@Table(name="user_db")
+@Table(name="users_db")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "username")
-    @NotEmpty
     private String username;
 
-    @Column(name = "email")
-    @NotEmpty
+    @Column(name = "email", nullable = false)
     private String email;
 
     @Column(name = "password")
-    @NotEmpty
     private String password;
 
     @Column(name = "first_name")
-    @NotEmpty
     private String firstName;
 
     @Column(name = "last_name")
-    @NotEmpty
     private String lastName;
 
     @Column(name = "enabled")
@@ -42,18 +37,14 @@ public class User {
     public User() {
     }
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Account> accounts;
-
-
-    public User(String username, String email, String password, String firstName, String lastName, boolean enabled) {
+    public User(String username, String email, String password,
+                String firstName, String lastName, boolean enabled) {
         this.username = username;
         this.email = email;
         this.setPassword(password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.enabled = enabled;
-
     }
 
     public long getId() {
@@ -72,14 +63,6 @@ public class User {
         this.username = username;
     }
 
-    public Set<Account> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(Set<Account> accounts) {
-        this.accounts = accounts;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -93,8 +76,13 @@ public class User {
     }
 
     public void setPassword(String password) {
-    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-    this.password = passwordEncoder.encode(password);}
+        if(password.length() < 3){
+            this.password = password;
+        } else{
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            this.password = passwordEncoder.encode(password);
+        }
+    }
 
     public String getFirstName() {
         return firstName;
@@ -119,5 +107,4 @@ public class User {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-
 }

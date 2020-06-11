@@ -30,84 +30,8 @@
             color: #404040;
             background: #0ca3d2;
         }
-        input[type=checkbox],
-        input[type=radio] {
-            border: 1px solid #c0c0c0;
-            margin: 0 0.1em 0 0;
-            padding: 0;
-            font-size: 16px;
-            line-height: 1em;
-            width: 1.25em;
-            height: 1.25em;
-            background: #fff;
-            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ededed), to(#fbfbfb));
 
-            -webkit-appearance: none;
-            -webkit-box-shadow: 1px 1px 1px #fff;
-            -webkit-border-radius: 0.25em;
-            vertical-align: text-top;
-            display: inline-block;
 
-        }
-
-        input[type=radio] {
-            -webkit-border-radius: 2em; /* Make radios round */
-        }
-
-        input[type=checkbox]:checked::after {
-            content:"✔";
-            display:block;
-            text-align: center;
-            font-size: 16px;
-            height: 16px;
-            line-height: 18px;
-        }
-
-        input[type=radio]:checked::after {
-            content:"●";
-            display:block;
-            height: 16px;
-            line-height: 15px;
-            font-size: 20px;
-            text-align: center;
-        }
-
-        select {
-            border: 1px solid #D0D0D0;
-            background: url(http://www.quilor.com/i/select.png) no-repeat right center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fbfbfb), to(#ededed));
-            background: -moz-linear-gradient(19% 75% 90deg,#ededed, #fbfbfb);
-            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-            color: #444;
-        }
-        .container {
-            margin: 50px auto;
-            width: 640px;
-        }
-
-        .login {
-            position: relative;
-            margin: 0 auto;
-            padding: 20px 20px 20px;
-            width: 310px;
-            background: white;
-            border-radius: 3px;
-            -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .login:before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            bottom: -8px;
-            left: -8px;
-            z-index: -1;
-            background: rgba(0, 0, 0, 0.08);
-            border-radius: 4px;
-        }
 
         .login h1 {
             margin: -20px -20px 21px;
@@ -252,7 +176,7 @@
 
     </style>
 </head>
-<body background="0ca3d2">
+<body>
 
 <nav class="navbar navbar-expand-sm   navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -265,11 +189,15 @@
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="deposit.html">Deposit</a>
+                <a class="nav-link" th:href="@{deposit}" >Deposit</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="Withdrawal.html">Withdrawal </a>
+                <a class="nav-link" th:href="@{withdrawal}" >Withdrawal </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{transaction}" >Transaction </a>
             </li>
             <li class="nav-item dropdown dmenu">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -282,10 +210,12 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="register.html">Register</a>
+                <a class="nav-link" th:href="@{register}" >Register</a>
+
+
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.html">Sign in</a>
+                <a class="nav-link" href="/login">Sign in</a>
             </li>
 
             <!-- <li class="nav-item dropdown dmenu">
@@ -325,6 +255,13 @@
             </div>
         </form>
 
+
+
+        <p class="submit">
+            <a class="btn btn-primary btn-sm" th:href="@{/register}" role="button">Register</a>
+        </p>
+
+
         <!--
         <div class="container">
             <div class="login">
@@ -352,7 +289,4 @@
         <hr class="my-2">
 
 
-        <p class="submit">
-            <a class="btn btn-primary btn-sm" href="register.html" role="button">Register</a>
-        </p>
     </div>
