@@ -5,7 +5,7 @@
 
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=bI897Gjar3BsT65L4hJim4A7jCuGEQV7DZjif8xC7tLizR0AR7jnruwx3Tgu6nqC3ApOT3a9Zj9dSojikoGPZiT_T4rKUdCulJ9FqUccCGjGREsUtiOEc3mZUgISSn0z4YZBusFZIP24gAgQLf9OCg" charset="UTF-8"></script><script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <title>Navbar</title>
@@ -30,8 +30,84 @@
             color: #404040;
             background: #0ca3d2;
         }
+        input[type=checkbox],
+        input[type=radio] {
+            border: 1px solid #c0c0c0;
+            margin: 0 0.1em 0 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1em;
+            width: 1.25em;
+            height: 1.25em;
+            background: #fff;
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ededed), to(#fbfbfb));
 
+            -webkit-appearance: none;
+            -webkit-box-shadow: 1px 1px 1px #fff;
+            -webkit-border-radius: 0.25em;
+            vertical-align: text-top;
+            display: inline-block;
 
+        }
+
+        input[type=radio] {
+            -webkit-border-radius: 2em; /* Make radios round */
+        }
+
+        input[type=checkbox]:checked::after {
+            content:"✔";
+            display:block;
+            text-align: center;
+            font-size: 16px;
+            height: 16px;
+            line-height: 18px;
+        }
+
+        input[type=radio]:checked::after {
+            content:"●";
+            display:block;
+            height: 16px;
+            line-height: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        select {
+            border: 1px solid #D0D0D0;
+            background: url(http://www.quilor.com/i/select.png) no-repeat right center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fbfbfb), to(#ededed));
+            background: -moz-linear-gradient(19% 75% 90deg,#ededed, #fbfbfb);
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            color: #444;
+        }
+        .container {
+            margin: 50px auto;
+            width: 640px;
+        }
+
+        .login {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 20px 20px;
+            width: 310px;
+            background: white;
+            border-radius: 3px;
+            -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .login:before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            bottom: -8px;
+            left: -8px;
+            z-index: -1;
+            background: rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+        }
 
         .login h1 {
             margin: -20px -20px 21px;
@@ -215,7 +291,7 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/login">Sign in</a>
+                <a class="nav-link" th:href="@{login}" >Sign in</a>
             </li>
 
             <!-- <li class="nav-item dropdown dmenu">
@@ -237,9 +313,14 @@
 </nav>
 
 
+</div>
+
+
+
 <div class="container">
     <div class="login">
-        <h2 class="my-2">Login Page</h2>
+        <h6 class="my-2">Please login or register to use the service
+        </h6>
         <div th:if="${param.error}">
             Invalid username or password
         </div>

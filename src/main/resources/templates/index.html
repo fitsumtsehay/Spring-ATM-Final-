@@ -289,15 +289,15 @@
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="deposit.html">Deposit</a>
+                <a class="nav-link" th:href="@{deposit}" >Deposit</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="withdrawal.html">Withdrawal </a>
+                <a class="nav-link" th:href="@{withdrawal}" >Withdrawal </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="transaction.html">Transaction </a>
+                <a class="nav-link" th:href="@{transaction}" >Transaction </a>
             </li>
             <li class="nav-item dropdown dmenu">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -310,10 +310,12 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="register.html">Register</a>
+                <a class="nav-link" th:href="@{register}" >Register</a>
+
+
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.html">Sign in</a>
+                <a class="nav-link" th:href="@{login}" >Sign in</a>
             </li>
 
             <!-- <li class="nav-item dropdown dmenu">
@@ -335,28 +337,85 @@
 </nav>
 
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Untitled</title>
+<div align="center">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=zCErS5LCFKFVJbjuJB7vhzZ_ODHiXw1HEdgJV0YvyI4gTwOcosI1py7CX9iv9euzJVqvnRcvtL6T0LQwcICjrhCle3ltq7cSw8dvfEfzIMEVI-q_KO7WqqePHuetC_PUJjuyhrxG_xli6FcBX11PIA" charset="UTF-8"></script></head>
+    <div>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4" >
 
-<body>
 
-<div class="jumbotron">
+
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading"></h4>
+                <h4 class="card-title">Check your Balance</h4>
+                <p class="card-text">Please click the link below to check your balance</p>
+
+                <br>
+                <br>
+                <br>
+
+                <a href="#" class="btn btn-primary">Balance</a>                <hr>
+
+                <br>
+                <br>
+
+            </div>
+<br>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="col-md-8">
+            <div class="card-body">
+                <div><div>
+                <h5 class="card-title">You are now logged in to use the ATM-Service</h5>
+                </div>
+                <div align="center">
+                    <br/>
+                    <h4 align="center"></h4>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Deposit money using ATM</h5>
+                                    <p class="card-text">Please click the link below to deposit money</p>
+                                    <a href="#" class="btn btn-primary">Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Withdraw money using ATM</h6>
+                                    <p class="card-text">Please click the link below to withdraw money</p>
+                                    <a href="#" class="btn btn-primary">Withdraw</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+    </div>
+</div>
+
+</div>
 
     <div align="center">
         <br/>
-        <h4 align="center">Welcome to Spring AtM</h4>
+        <h4 align="center"></h4>
 
+        <div class="row">
 
+                </div>
+            </div>
+        </div>
 
 
     </div>
@@ -378,4 +437,3 @@
 </body>
 
 </html>
-</div>

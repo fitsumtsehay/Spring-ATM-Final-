@@ -22,6 +22,14 @@
         <meta name="robots" content="noindex,follow" />
 
     -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/header/datetimepicker.css}"/>
+    <script th:src="@{/css/header/jquery.min.js}"></script>
+    <script th:src="@{/css/header/datetimepicker.js}"></script>
+    <script th:src="@{/css/header/dates.js}"></script>
+
     <style>
 
 
@@ -266,7 +274,7 @@
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="deposit.html">Deposit</a>
+                <a class="nav-link" th:href="@{deposit}" >Deposit</a>
             </li>
 
             <li class="nav-item">
@@ -311,5 +319,9 @@
     </div>
 </nav>
 -->
+
+
+
+
 </body>
 </html>
